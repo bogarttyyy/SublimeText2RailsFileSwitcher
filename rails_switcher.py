@@ -112,8 +112,8 @@ class RailsViewSwitcher(RailsFileSwitcher):
     if views_list:
       # Views exist, choose the first one
 
-      # Using pop(0) to prefer `html` to `js` and `json`
-      file_path = os.path.join(self.rails_root_path, self.VIEWS_DIR, views_list.pop(0))
+      # Using pop() to prefer `html` to `js` and `json`
+      file_path = os.path.join(self.rails_root_path, self.VIEWS_DIR, views_list.pop())
     else:
       # No view exists, we need to know what to name it if the user decides to create it
       file_path = full_path_without_extension + '.html.' + self.views_extension()
